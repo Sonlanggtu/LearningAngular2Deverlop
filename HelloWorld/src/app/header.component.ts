@@ -1,14 +1,14 @@
 import {Component} from '@angular/core';
 
-// TH1 : Ap dung style cho class
-// TH2: Hay ap dung khi kiem true gia tri true false tu do doi mau
+// Property binding : la luong data tu model => view
+// Even binding : la luong data tu view => model
 
 @Component({
     selector: 'App-Header',
-    template : `Neu dung doan Apply se mau xanh , sai se mau do
-    <h4 [class.truefalse] = 'testColor1'> Applyyyyyyy </h4>
-    <h4 [style.color] = "testColor2 ? 'green' : 'blue'"> Apply </h4>
-    <h4 [style.color] = "false ? 'green' : 'red'"> Apply </h4>
+    template : `
+    <h4><button (click)="FunCRandom()">Tạo số ngẫu nhiên</button></h4>
+    <h4><button (click)="GetdataInput(Getdata.value)">GetDataInput</button></h4>  
+    <input type='text' #Getdata />
     `,
     styles : [`.truefalse{
         color : red;
@@ -25,4 +25,13 @@ export class AppHeader{
     public images = 'assets/images/ClassD11QTANM.jpg';
     public testColor1 = true;
     public testColor2 = false;
+    public FunCRandom(){
+        let random = Math.random();
+        console.log(random);
+    }
+    public GetdataInput(values){
+        console.log(values);
+    }
+    
+        
 }
