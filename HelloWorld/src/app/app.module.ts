@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import {AppHeader} from './header.component';
-
+import {FormsModule} from '@angular/forms'
 
 
 
@@ -14,7 +14,8 @@ import {AppHeader} from './header.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent,AppHeader]
