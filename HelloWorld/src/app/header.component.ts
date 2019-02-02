@@ -1,33 +1,34 @@
 import {Component} from '@angular/core';
 
-// Property binding : la luong data tu model => view
-// Even binding : la luong data tu view => model
-// Two way binding là thực hiện 2 thao tác (Property & even binding) khi model phản ánh vào view và ngược lại
+
 @Component({
     selector: 'App-Header',
     template : `
-    <label for="FirstName">Firstname</label>
-    <input type='text' [(ngModel)] = "FirstName" name="FirstName" />
-    <label for="LastName">LastName</label>
-    <input type='text' [(ngModel)] = "LastName" name="LastName" />
-    <br>
-    <h5>Full Name: {{FirstName}} {{LastName}}</h5>
+    <p *ngIf = 'TestIf'>Đây là thẻ test ngIf</p>
+
+    <div [ngSwitch] = "TestCars">
+            <b>Category Cars</b>
+    <p *ngSwitchCase = "'S500'">Mecedes S500</p>
+    <p *ngSwitchCase = "'Camry'">Camry 2.0E</p>
+    <p *ngSwitchCase = "'E250'">Mecedes E250</p>
+    <p *ngSwitchCase = "'C200'">Mecedes C200</p>
+    <p *ngSwitchCase = "'HondaRecord'">Honda Record</p>
+    <div>
+    
+    For Directives
+    <ul>
+        <li *ngFor = "let Flower of StringFlower">{{Flower}} </li>
+    </ul>
     `,
-    styles : [`.truefalse{
-        color : red;
-        
-    }`]
+    styles : [``]
     // templateUrl: './header.component.html',
     // styleUrls: ['./header.component.css'],
 })
 
-// internal binding
 export class AppHeader{
     ClassEPU = "D11QTANM";
-    //property value
-    public images = 'assets/images/ClassD11QTANM.jpg';
-    public testColor1 = true;
-    public testColor2 = false;
-    
-        
+    public TestCars = "S500";
+    public TestIf = false;
+
+    public StringFlower : string[] = ['Lan','Cuc','Hue','DongTien','HuongDuong'];
 }
