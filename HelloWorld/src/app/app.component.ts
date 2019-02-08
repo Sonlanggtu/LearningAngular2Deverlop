@@ -10,4 +10,6 @@ export class AppComponent {
     public Form_InfoEnpolyee(value : any){
       console.log(value);
     }
+
+
   }

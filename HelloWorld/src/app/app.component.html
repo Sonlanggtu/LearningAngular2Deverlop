@@ -8,28 +8,40 @@
 <App-Header></App-Header>
 <router-outlet></router-outlet> -->
 
-<form #InfoEnpolyee="ngForm" (ngSubmit)=Form_InfoEnpolyee(InfoEnpolyee.value) >
+<form #InforEmployee="ngForm" (ngSubmit)="Form_InfoEnpolyee(InforEmployee.value)" >
   <div class="col-lg-12">
   <div class="form-group" >
       <label for="name"> Name </label>
-      <input type="text" name="name" class="form-control col col-lg-2" ngModel/>
+      <input type="text" name="name" required  minlength="4" maxlength="10" class="form-control col col-lg-2" #name="ngModel" ngModel />
+        <div *ngIf = "name.errors && (name.touched || name.dirty) " class="alert alert-danger">
+          <div [hidden]="!name.errors.required">
+              Name is required
+          </div>
+          <div [hidden]="!name.errors.minlength">
+              Name very short
+          </div>
+          <div [hidden]="!name.errors.maxlength">
+               Name can  than more 10 character
+          </div>   
+        </div>
+     
   </div>
   <div class="form-group">
       <label for="email">Email </label>
-      <input type="text" name="email" class="form-control col col-lg-2" ngModel/>
+      <input type="text" name="email" required  class="form-control col col-lg-2" ngModel/>
   </div>
   <div ngModelGroup="Address">
   <div class="form-group">
       <label for="street">Street</label>
-      <input type="text" name="street" class="form-control col col-lg-2" ngModel/>
+      <input type="text" name="street" required class="form-control col col-lg-2" ngModel/>
   </div>
   <div class="form-group">
       <label for="city">City</label>
-      <input type="text" name="city" class="form-control col col-lg-2" ngModel/>
+      <input type="text" name="city" required class="form-control col col-lg-2" ngModel/>
   </div>
   <div class="form-group">
       <label for="postalcode">Postal Code</label>
-      <input type="text" name="postalcode" class="form-control col col-lg-2" ngModel/>
+      <input type="text" name="postalcode" required  class="form-control col col-lg-2" ngModel/>
   </div>
 </div>
   <button id='btn-save' type="submit" class="btn btn-success">Save</button>
