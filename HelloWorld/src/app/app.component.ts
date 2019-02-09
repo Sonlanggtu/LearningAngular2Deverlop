@@ -10,7 +10,7 @@ export class AppComponent {
   public Form_InfoEnpolyee(value: any) {
     console.log(value);
   }
-  public city = [
+  public city : any[] = [
     {ID:1, Name:'Hà Nội'},
     {ID:2, Name:'TP. HCM'},
     {ID:3, Name:'Hải Phòng'},
