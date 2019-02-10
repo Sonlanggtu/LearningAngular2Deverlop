@@ -1,4 +1,21 @@
 <h4>Read Information for Service:</h4>
-<ul>
-    <li *ngFor="let persion of ListEmployee">{{persion.Name}}</li>
-</ul>
+<table class="table">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>CreateDate</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let persion of ListEmployee">
+            <td>{{persion.ID}}</td>
+            <td>{{persion.CreateDate}}</td>
+            <td>{{persion.Name}}</td>
+            <td>{{persion.Age}}</td>
+            <td>{{persion.Status}}</td>
+        </tr>
+    </tbody>
+</table>
