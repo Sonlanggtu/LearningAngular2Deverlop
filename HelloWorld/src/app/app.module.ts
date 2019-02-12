@@ -5,9 +5,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { AppHeader } from './header.component';
 import { FormsModule } from '@angular/forms'
-import { EmployeeExport } from './employee.component';
-import { EmployeeService } from './service/Employee.service';
 import {HttpModule} from '@angular/http';
+import {PageExport} from './page.component';
+import {NotFound404Page} from './error404.component';
+import {HomePage} from './home.component';
 
 @NgModule({
   imports: [
@@ -17,10 +18,10 @@ import {HttpModule} from '@angular/http';
     HttpModule
   ],
   declarations: [
-    AppHeader, AppComponent, EmployeeExport
+    AppHeader, AppComponent,PageExport,NotFound404Page,HomePage
   ],
 
-  providers: [EmployeeService],
-  bootstrap: [AppComponent, AppHeader, EmployeeExport]
+  providers: [],
+  bootstrap: [PageExport,AppComponent, AppHeader,NotFound404Page]
 })
 export class AppModule { }
